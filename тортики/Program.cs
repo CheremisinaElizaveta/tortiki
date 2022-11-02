@@ -17,10 +17,10 @@ int[] pricedecor= new int[] { 10000, 700, 500 };
 
 int row = Console.CursorTop;
 int col = Console.CursorLeft;
-ConsoleKeyInfo k;  //первый вайл
-ConsoleKeyInfo k2;   //второй вайл
-int index = 0;  //перемещение по основному  
-int index2 = 0;  //перемещение по дополнительному  
+ConsoleKeyInfo k;  
+ConsoleKeyInfo k2;   
+int index = 0;    
+int index2 = 0;  
 int cena = 0;
 int flag=0;
 int flag2=0;
@@ -34,7 +34,7 @@ do
         flag2 = 1;
 
         
-    DrawMenu(menuItems, row + 3, col, index);  //рав плюс три опускается курсор вниз
+    DrawMenu(menuItems, row + 3, col, index);  
     Console.WriteLine("Цена:" + cena);
     Console.WriteLine("Ваш торт:" + tort);
     k = Console.ReadKey();
@@ -267,14 +267,13 @@ do
                 case 6:
                     try
                     {
-                        //Pass the filepath and filename to the StreamWriter Constructor
-                        StreamWriter sw = new StreamWriter("D:\\Test.txt",true);  //тру значит что если файл есть, то он будет его пересоздавать 
-                        //Write a line of text
+                        
+                        StreamWriter sw = new StreamWriter("D:\\Test.txt",true);  
                         sw.WriteLine("Заказ от "+ DateTime.Now);
-                        //Write a second line of text
+                        
                         sw.WriteLine(tort);
                         sw.WriteLine("Цена: "+cena);
-                        //Close the file
+                 
                         sw.Close();
                     }
                     catch (Exception e)
